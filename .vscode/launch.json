@@ -1,0 +1,74 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            //requires --remote-debugging-port=9222 in chrome shortcut
+            "name": "Debug UI (attach)",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9222,
+            "url": "http://localhost:3000",
+            "urlFilter": "*",
+            "webRoot": "${workspaceRoot}/src"
+        },
+        {
+            "name": "Debug UI (with no extension support)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceRoot}/src"
+        },
+        {
+            "name": "Debug UI (with extension support, close all chrome instances first)",
+            "type": "chrome",
+            "request": "launch",
+            "userDataDir": false,
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceRoot}/src"
+        },
+        {
+            "type": "node",
+            "name": "vscode-jest-tests",
+            "request": "launch",
+            "runtimeExecutable": "yarn",
+            "args": [
+                "test",
+                "--env=jsdom",
+                "--no-cache",
+                "--runInBand"
+            ],
+            "cwd": "${workspaceFolder}/",
+            "console": "integratedTerminal",
+            "protocol": "inspector",
+            "internalConsoleOptions": "neverOpen",
+            "disableOptimisticBPs": true,
+            "env": {
+                "CI": "true"
+            }
+        },
+        {
+            "type": "node",
+            "name": "vscode-jest-tests-current-file",
+            "request": "launch",
+            "runtimeExecutable": "yarn",
+            "args": [
+                "test",
+                "${fileBasename}",
+                "--env=jsdom",
+                "--runInBand",
+                "--no-cache"
+            ],
+            "cwd": "${workspaceFolder}/",
+            "console": "integratedTerminal",
+            "protocol": "inspector",
+            "internalConsoleOptions": "neverOpen",
+            "disableOptimisticBPs": true,
+            "env": {
+                "CI": "true"
+            }
+        },
+    ]
+}

@@ -3,11 +3,11 @@ const initalState = {
   data: {
     labels: [],
     datasets: [{
-      label: "BTC",
+      label: "Default",
       data: [],
-      backgroundColor: 'rgba(238,175,0, 0.4)',
       borderColor: 'rgba(238,175,0, 0.5)',
-      pointBorderColor: 'rgba(238,175,0, 0.7)'
+      pointBorderColor: 'rgba(238,175,0, 0.7)',
+      fill: false
     }]
   }
 };
@@ -33,18 +33,38 @@ const bitcoinReducer = (state = initalState, action) => {
         data: {
           labels: payload.labels,
           datasets: [{
-            label: "BTC",
-            data: payload.data,
-            backgroundColor: 'rgba(238,175,0, 0.4)',
+            label: "France",
+            data: payload.franceData,
             borderColor: 'rgba(238,175,0, 0.5)',
-            pointBorderColor: 'rgba(238,175,0, 0.7)'
+            pointBorderColor: 'rgba(238,175,0, 0.7)',
+            fill: false
+          },
+          {
+            label: "Belgium",
+            data: payload.belgiumData,
+            borderColor: 'rgba(238,175,0, 0.5)',
+            pointBorderColor: 'rgba(238,175,0, 0.7)',
+            fill: false
+          },
+          {
+            label: "Netherlands",
+            data: payload.netherlandsData,
+            borderColor: 'rgba(238,175,0, 0.5)',
+            pointBorderColor: 'rgba(238,175,0, 0.7)',
+            fill: false
+          },
+          {
+            label: "Norway",
+            data: payload.norwayData,
+            borderColor: 'rgba(238,175,0, 0.5)',
+            pointBorderColor: 'rgba(238,175,0, 0.7)',
+            fill: false
           }]
         }
       }
     default:
       return state;
   }
-  return state;
 }
 
 export default bitcoinReducer;
