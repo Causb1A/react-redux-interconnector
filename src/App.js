@@ -10,18 +10,23 @@ function App() {
   const [apiLink, setapiLink] = React.useState('NA');
 
   const fetchData = () => {
-    //Fetch data from redux using time
     dispatch(getData({
        apiLinkUser: apiLink
     }))
   }
 
+  const interval = () => setInterval(() => {
+    fetchData()
+  }, 5000);
+
   return (
     <div className="App">
+      <h1>Interconnector Serverless Sample Workshop</h1>
+      <p1>By Adrian Causby</p1>
       <div className={"btns-wrapper"}>
-        <button onClick={() => fetchData()}>Generate</button>
+        <button onClick={() => interval()}>Generate</button>
         <input onChange={e => setapiLink(e.target.value)} />
-        {state.loading && <p>Loading...</p>}
+        {state.loading && <p>Updating...</p>}
       </div>
       <div className={"chart-wrapper"}>
         <Line

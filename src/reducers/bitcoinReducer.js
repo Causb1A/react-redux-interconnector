@@ -42,22 +42,22 @@ const bitcoinReducer = (state = initalState, action) => {
           {
             label: "Belgium",
             data: payload.belgiumData,
-            borderColor: 'rgba(238,175,0, 0.5)',
-            pointBorderColor: 'rgba(238,175,0, 0.7)',
+            borderColor: 'rgba(255,23,23, 0.8)',
+            pointBorderColor: 'rgba(255,23,23, 0.8)',
             fill: false
           },
           {
             label: "Netherlands",
             data: payload.netherlandsData,
-            borderColor: 'rgba(238,175,0, 0.5)',
-            pointBorderColor: 'rgba(238,175,0, 0.7)',
+            borderColor: 'rgba(17,23,255, 0.8)',
+            pointBorderColor: 'rgba(17,23,255, 0.8)',
             fill: false
           },
           {
             label: "Norway",
             data: payload.norwayData,
-            borderColor: 'rgba(238,175,0, 0.5)',
-            pointBorderColor: 'rgba(238,175,0, 0.7)',
+            borderColor: 'rgba(17,255,0, 0.8)',
+            pointBorderColor: 'rgba(17,255,0, 0.8)',
             fill: false
           }]
         }
