@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import bitcoinReducer from "./bitcoinReducer";
+import interconnectorReducer from "./interconnectorReducer";
 
 const rootReducer = combineReducers({
-  bitcoin: bitcoinReducer
+  interconnector: interconnectorReducer
 })
 
 export default rootReducer;

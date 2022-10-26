@@ -12,21 +12,21 @@ const initalState = {
   }
 };
 
-const bitcoinReducer = (state = initalState, action) => {
+const interconnectorReducer = (state = initalState, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case "AWAITING_BITCOIN":
+    case "AWAITING_interconnector":
       return {
         ...state,
         loading: true
       }
-    case "REJECTED_BITCOIN":
+    case "REJECTED_interconnector":
       return {
         ...state,
         loading: false,
       }
-    case "SUCCESS_BITCOIN":
+    case "SUCCESS_interconnector":
       return {
         ...state,
         loading: false,
@@ -67,4 +67,4 @@ const bitcoinReducer = (state = initalState, action) => {
   }
 }
 
-export default bitcoinReducer;
+export default interconnectorReducer;

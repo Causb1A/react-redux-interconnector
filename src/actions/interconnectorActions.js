@@ -4,7 +4,7 @@ import moment from "moment";
 export const getData = ({ apiLinkUser }) => async dispatch => {
   try {
     dispatch({
-      type: "AWAITING_BITCOIN"
+      type: "AWAITING_interconnector"
     })
 
     const response = await axios.get(apiLinkUser)
@@ -23,7 +23,7 @@ export const getData = ({ apiLinkUser }) => async dispatch => {
     }
 
     dispatch({
-      type: "SUCCESS_BITCOIN",
+      type: "SUCCESS_interconnector",
       payload: {
         franceData,
         belgiumData,
@@ -34,7 +34,7 @@ export const getData = ({ apiLinkUser }) => async dispatch => {
     })
   } catch (e) {
     dispatch({
-      type: "REJECTED_BITCOIN",
+      type: "REJECTED_interconnector",
     })
   }
 }

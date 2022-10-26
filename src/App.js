@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 import { Line } from 'react-chartjs-2';
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "./actions/bitcoinActions";
+import { getData } from "./actions/interconnectorActions";
 
 function App() {
   const dispatch = useDispatch();
-  const state = useSelector(state => state.bitcoin)
+  const state = useSelector(state => state.interconnector)
   const [apiLink, setapiLink] = React.useState('NA');
 
   const fetchData = () => {
